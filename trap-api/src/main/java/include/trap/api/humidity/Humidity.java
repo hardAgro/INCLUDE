@@ -1,4 +1,4 @@
-package include.trap.api;
+package include.trap.api.humidity;
 
 import java.time.LocalDateTime;
 
@@ -10,15 +10,15 @@ import lombok.EqualsAndHashCode;
 
 @Data
 @EqualsAndHashCode(of = "id")
-@Document(indexName = "trap_entry", createIndex = true)
-public class TrapEntry {
+@Document(indexName = "humidity", createIndex = true)
+public class Humidity {
 
 	@Id
 	private Long id;
 
-	private LocalDateTime dateTime;
+	private LocalDateTime timestamp;
 
-	private String trapName;
+	private String tag;
 
-	private Long pragueCount;
+	private Double value;
 }

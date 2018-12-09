@@ -1,9 +1,9 @@
-package include.trap.api;
+package include.trap.api.humidity;
 
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface TrapEntryRepository extends ElasticsearchRepository<TrapEntry, Long> {
+public interface HumidityRepository extends ElasticsearchRepository<Humidity, Long> {
 
 }
