@@ -11,5 +11,8 @@ docker-compose up -d
 ```
 
 ### Features
-
-### Licenses
+* Fazer amostragem populacional de pragas em armadilhas
+* Medir a umidade do ambiente
+* Medir a temperatura do ambiente
+* Identificar a ocorrência de chuva
+* Apresentar visualizações e dashboards
