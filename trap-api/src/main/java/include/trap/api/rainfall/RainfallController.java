@@ -21,10 +21,10 @@ public class RainfallController {
 	private RainfallRepository repository;
 
 	@GetMapping
-	public ResponseEntity<Void> create(@RequestParam String tag, @RequestParam Double value) {
+	public ResponseEntity<Void> create(@RequestParam String tag, @RequestParam String value) {
 		Rainfall entry = new Rainfall();
 		entry.setTag(tag);
-		entry.setValue(value.intValue() == 0 ? false : true);
+		entry.setValue(Integer.valueOf(value) == 0 ? false : true);
 		entry.setId(Instant.now().getMillis());
 		entry.setTimestamp(LocalDateTime.now());
 		repository.save(entry);

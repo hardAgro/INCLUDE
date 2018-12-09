@@ -21,10 +21,10 @@ public class PragueController {
 	private PragueRepository repository;
 
 	@GetMapping
-	public ResponseEntity<Void> create(@RequestParam String tag, @RequestParam Double value) {
+	public ResponseEntity<Void> create(@RequestParam String tag, @RequestParam String value) {
 		Prague entry = new Prague();
 		entry.setTag(tag);
-		entry.setValue(value.longValue());
+		entry.setValue(Long.valueOf(value));
 		entry.setId(Instant.now().getMillis());
 		entry.setTimestamp(LocalDateTime.now());
 		repository.save(entry);

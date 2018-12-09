@@ -21,10 +21,10 @@ public class HumidityController {
 	private HumidityRepository repository;
 
 	@GetMapping
-	public ResponseEntity<Void> create(@RequestParam String tag, @RequestParam Double value) {
+	public ResponseEntity<Void> create(@RequestParam String tag, @RequestParam String value) {
 		Humidity entry = new Humidity();
 		entry.setTag(tag);
-		entry.setValue(value);
+		entry.setValue(Double.valueOf(value));
 		entry.setId(Instant.now().getMillis());
 		entry.setTimestamp(LocalDateTime.now());
 		repository.save(entry);
