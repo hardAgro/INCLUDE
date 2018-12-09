@@ -1,4 +1,5 @@
 # Include Trap
+![System architecture](system-architecture.png)
 
 ### Requirements
 * [Docker](https://docs.docker.com/install/)
