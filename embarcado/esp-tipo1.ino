@@ -14,7 +14,7 @@
 #define D2    4 //led
 #define D3    0 //chuva
 #define D4    2 //DHT11
-#define D5    14
+#define D5    14 //som
 #define D6    12
 #define D7    13
 #define D8    15
@@ -48,6 +48,7 @@ void setup() {
   Serial.begin(115200);
   initWiFi();
   pinMode(D2, OUTPUT);
+  pinMode(D5, INPUT);
   //pinMode(A0, INPUT);
   dht.begin();       
 }
@@ -88,7 +89,7 @@ void loop() {
     empurraDado(segredoDoComponenteChuva,dadoChuva);
     delay(100);
     //coletando dado do sensor de umidade solo
-    int Morte=analogRead(A0);   // Le o input do A0;
+    int Morte=digitalRead(D5);   // Le o input do A0;
     
     String dadoMorte = String(Morte);
     Serial.print("Morte: ");
